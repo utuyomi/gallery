@@ -1,0 +1,162 @@
+.hero {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1px;
+  header {
+    width: 100%;
+    height: 150px;
+    .logo {
+      display: none;
+    }
+    .hum {
+      position: fixed;
+      right: calc(50% - 600px);
+      top: 55px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+      span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #000;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      span:nth-child(1) {
+        top: 12px;
+      }
+
+      span:nth-child(2) {
+        bottom: 12px;
+      }
+    }
+
+    .open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 18px;
+    }
+
+    .open span:nth-child(2) {
+      transform: rotate(-45deg);
+      bottom: 18px;
+    }
+    nav {
+      position: fixed;
+      width: 300px;
+      transform: translateX(-250%);
+      transition: all 0.5s;
+      z-index: 100;
+      &.navOpen {
+        transform: translateX(0) !important;
+      }
+      ul {
+        list-style: none;
+        li {
+          padding: 15px 0;
+          transition: all 0.3s;
+
+          a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -20px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: #333;
+              transform-origin: right; // 右側を起点に縮む！
+              transform: scaleX(1); // 初期状態：100%
+              transition: transform 0.3s ease;
+            }
+
+            &:hover::after {
+              transform: scaleX(0); // → 幅0（消える）
+            }
+          }
+        }
+      }
+    }
+  }
+  .visual {
+    position: relative;
+    width: 100%;
+    .mainview {
+      .img {
+        position: relative;
+        right: 0;
+        width: 70%;
+        aspect-ratio: 16/9;
+        background-color: gray;
+        margin-left: 30%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 0);
+      }
+    }
+    h1 {
+      top: 200px;
+      left: 50%;
+      position: absolute;
+      font-size: 5em;
+      font-weight: bold;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      mix-blend-mode: multiply;
+    }
+    .bottomarrow {
+      position: relative;
+      display: block;
+      width: 300px;
+      height: 120px;
+      border: solid 1px black;
+      font-size: 2em;
+      line-height: 80px;
+      text-align: center;
+      margin: 150px auto 100px;
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      span {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: top 1s ease;
+        &::before {
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          content: "";
+          display: block;
+          width: 5px;
+          height: 0;
+          background: #4b4b4b;
+          transition: 1s ease;
+          transform: translateX(-50%);
+        }
+        &.active {
+          top: 170px;
+        }
+        &.active::before {
+          height: 100px;
+        }
+        img {
+          display: block;
+          width: 30px;
+          height: auto;
+          margin-top: -20px;
+        }
+      }
+    }
+  }
+}

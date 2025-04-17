@@ -1,0 +1,135 @@
+.Gallery {
+  width: 100%;
+  .GalleryList {
+    width: 100%;
+    background-color: #d9d9d9;
+    padding: 1px;
+    .GalleryLeftitem {
+      position: relative;
+      width: 800px;
+      height: 450px;
+      z-index: 10;
+      margin: 80px auto;
+      transition: all 0.5s;
+      .img {
+        position: absolute;
+        top: 25px;
+        left: 100px;
+        background-color: gray;
+        width: 600px;
+        height: 400px;
+        transition: all 1s;
+        img {
+        }
+      }
+      .text {
+        position: absolute;
+        top: 25px;
+        left: 100px;
+        background-color: #f4f4f4;
+        width: 600px;
+        height: 400px;
+        z-index: -1;
+        transition: all 1s;
+        h2 {
+          width: 200px;
+          margin-left: 400px;
+          text-align: center;
+        }
+        ul {
+          width: 200px;
+          margin-left: 460px;
+          padding-left: 0;
+          text-align: left;
+          list-style: none;
+          li {
+          }
+        }
+      }
+
+      &.slideX {
+        .img {
+          transform: translateX(-100px); // 横のみ
+        }
+        .text {
+          transform: translateX(100px); // 横のみ
+        }
+      }
+
+      &.slideY {
+        .img {
+          transform: translateX(-100px) translateY(-25px); // 横+縦
+        }
+        .text {
+          transform: translateX(100px) translateY(25px); // 横+縦
+        }
+      }
+    }
+    .GalleryRightitem {
+      position: relative;
+      width: 800px;
+      height: 450px;
+      z-index: 10;
+      margin: 80px auto;
+
+      .img {
+        position: absolute;
+        top: 25px;
+        left: 100px;
+        background-color: gray;
+        width: 600px;
+        height: 400px;
+        transition: all 1s;
+        img {
+          // 必要に応じてスタイル追加
+        }
+      }
+
+      .text {
+        position: absolute;
+        top: 25px;
+        left: 100px; 
+        background-color: #f4f4f4;
+        width: 600px;
+        height: 400px;
+        z-index: -1;
+        transition: all 1s;
+        h2 {
+          width: 200px;
+          margin-right: 400px; // ← margin-left → margin-right
+          margin-left: auto;
+          text-align: center;
+        }
+
+        ul {
+          width: 200px;
+          margin-left: 60px; // ← 同上
+          padding-left: 0;
+          text-align: left;
+          list-style: none;
+
+          li {
+            // ...
+          }
+        }
+      }
+      &.slideX {
+        .img {
+          transform: translateX(100px); // 右方向へ
+        }
+        .text {
+          transform: translateX(-100px); // 左方向へ
+        }
+      }
+
+      &.slideY {
+        .img {
+          transform: translateX(100px) translateY(-25px); // 右 + 縦
+        }
+        .text {
+          transform: translateX(-100px) translateY(25px); // 左 + 縦
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "nav": [
+    { "id": 1, "label": "Home", "url": "/" },
+    { "id": 2, "label": "Works", "url": "/works" },
+    { "id": 3, "label": "Contact", "url": "/contact" }
+  ],
+  "hero": {
+    "catch01": "Designed ",
+    "catch02": "to Function.",
+    "sub": "機能のために設計された。",
+    "image": "/images/hero.jpg"
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "image": "image1.jpg",
+      "title": "Project 1",
+      "skills": ["HTML", "CSS", "JavaScript", "Photoshop", "Sketch"],
+      "link": "/project1"
+    },
+    {
+      "id": 2,
+      "image": "image2.jpg",
+      "title": "Project 2",
+      "skills": ["HTML", "CSS", "JavaScript", "Photoshop", "Illustrator"],
+      "link": "/project2"
+    },
+    {
+      "id": 3,
+      "image": "image3.jpg",
+      "title": "Project 3",
+      "skills": ["HTML", "CSS", "JavaScript", "Sketch"],
+      "link": "/project3"
+    },
+    {
+      "id": 4,
+      "image": "image3.jpg",
+      "title": "Project 3",
+      "skills": ["HTML", "CSS", "JavaScript", "Sketch"],
+      "link": "/project3"
+    }
+  ]
+}
